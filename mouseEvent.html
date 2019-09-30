@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouseEvent</title>
+</head>
+<body>
+    <form>
+        <img id="ball" src="ball.jpg" style="width: 250px">
+        <p>Click the button below to move the image to right</p>
+        <input type="button" value="Click me" onclick="moveRight()"><br/>
+        <p>Click the button below to move the image to left</p>
+        <input type="button" value="Click me" onclick="moveLeft()">
+    </form>
+    <script>
+        let imgObject = null;
+        imgObject=document.getElementById("ball");
+        function init() {
+            imgObject = document.getElementById("ball");
+            imgObject.style.position="relative";
+            imgObject.style.left='0px';
+        }
+        function moveRight() {
+            imgObject.style.left = parseInt(imgObject.style.left)+10+'px';
+        }
+        function moveLeft() {
+            imgObject.style.left = parseInt(imgObject.style.left)-10+'px';
+        }
+        window.onload=init
+    </script>
+</body>
+</html>
